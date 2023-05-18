@@ -3,8 +3,8 @@ gentickets.py
 
 Create TICKET_COUNT number of random jira tickets over the course of RUN_TIME seconds
 
-a)	The creation time of the ticket is randomized.
-b)	Tickets priority is randomized. See priorities list.
+a) The creation time of the ticket is randomized.
+b) Tickets priority is randomized. See priorities list.
 
 """
 from atlassian import Jira
@@ -20,11 +20,11 @@ logging.basicConfig(level=logging.INFO)
 issuetypes = ["Task", "Bug", "Improvement"]
 priorities = ["Highest", "High", "Medium", "Low", "Lowest"]
 
-TICKET_COUNT = 2
-RUN_TIME = 60 * 1  # 1 hour
+TICKET_COUNT = 100
+RUN_TIME = 60 * 60  # 1 hour
 
 
-def populate_tickets(jira: Jira, project: str) -> None:
+def generate_tickets(jira: Jira, project: str) -> None:
     logging.info(f"Run start time: {time.ctime()}")
     start_time = time.time()
     end_time = start_time + RUN_TIME
@@ -68,7 +68,7 @@ def main():
         password=config["jira"]["password"],
     )
     project = config["jira"]["project"]
-    populate_tickets(jira, project)
+    generate_tickets(jira, project)
 
 
 if __name__ == "__main__":
