@@ -26,9 +26,9 @@ to `config.toml` and set the values. The `project` key corresponds to the Jira P
 
 The three functionalities are provided as three script entry points:
 
-* [x] `poetry run gettickets` -- to create the the random tickets
+* [x] `poetry run gentickets` -- to create the the random tickets
 * [x] `poetry run populatedb` -- to download the high priority tickets
-* [x] `poetry run gentickets` -- to generate plot of high priority tickets/min
+* [x] `poetry run plottickets` -- to generate plot of high priority tickets/min
 
 
 ## Output

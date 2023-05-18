@@ -24,7 +24,7 @@ def plot_issues_per_minutes(timestamps: List[str], output_file: str) -> None:
     df = df.set_index("created").sort_index()
     df_resampled = df.resample("1min").size()
     df_resampled = df_resampled.reset_index()
-    df_resampled["created"] = df_resampled["created"].dt.strftime("%M")
+    df_resampled["created"] = df_resampled["created"].dt.strftime("%H-%M")
     df_resampled = df_resampled.set_index("created")
     df_resampled.plot(kind="bar")
     plt.title("Number of Issues per minute")
