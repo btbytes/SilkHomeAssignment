@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "silkhomeassignment"
+version = "0.1.1"
+description = "Silk Security Take Home Assignment Project"
+authors = ["Pradeep Gowda <pradeep@btbytes.com>"]
+license = "Propreitary"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+atlassian-python-api = "^3.37.0"
+lorem = "^0.1.1"
+toml = "^0.10.2"
+tinydb = "^4.7.1"
+pandas = "^2.0.1"
+matplotlib = "^3.7.1"
+python-dateutil = "^2.8.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+gentickets = "silkhomeassignment.gentickets:main"
+populatedb = "silkhomeassignment.populatedb:main"
+plottickets = "silkhomeassignment.plottickets:main"
