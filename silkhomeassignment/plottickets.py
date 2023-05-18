@@ -51,8 +51,8 @@ def main():
     )
     parser.add_argument(
         "--output",
-        default="records_per_minute.png",
-        help="Path to the output file (default: records_per_minute.png)",
+        default="issues_per_minute.png",
+        help="Path to the output file (default: issues_per_minute.png)",
     )
     args = parser.parse_args()
     plot_tickets(args.input, args.output)

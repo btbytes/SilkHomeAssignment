@@ -13,6 +13,7 @@ All subsequent commands are assumed to be run inside that environment.
 
 Dependencies are captured in the `pyproject.toml` file. Some intersting ones are:
 
+* Python 3.11 - this is the version I use on my dev laptop.
 * `atlassian-python-api` for interacting with Jira.
 * `lorem` for generating random strings.
 * `toml` for configuration format.
@@ -34,3 +35,7 @@ The three functionalities are provided as three script entry points:
 ## Output
 
 See [output/issues.json](output/issues.json) for a dump of the Jira issues my program created.
+
+Plotted output
+
+![Plotted Output](output/issues_per_minute.png)
