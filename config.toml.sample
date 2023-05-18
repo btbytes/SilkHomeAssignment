@@ -1,0 +1,5 @@
+[jira]
+url = "https://yourjira.atlassian.net"
+username = "you@example.com"
+password = "th3securepassw0rd"
+project = "SHA"
