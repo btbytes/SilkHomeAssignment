@@ -7,11 +7,11 @@ Make sure you have it installed.
 
 To install the application dependencies, run `poetry install` in the root of this project.
 
-To activate the python environment with all the dependcies installed, run `poetry shell`.
+To activate the python environment with all the dependencies installed, run `poetry shell`.
 
 All subsequent commands are assumed to be run inside that environment.
 
-Dependencies are captured in the `pyproject.toml` file. Some intersting ones are:
+Dependencies are captured in the `pyproject.toml` file. Some interesting ones are:
 
 * Python 3.11 - this is the version I use on my dev laptop.
 * `atlassian-python-api` for interacting with Jira.
@@ -22,7 +22,7 @@ Dependencies are captured in the `pyproject.toml` file. Some intersting ones are
 
 ## Running
 
-All the programs have sensible defaults, and you have to set only the configruation. Copy `config.toml.sample`
+All the programs have sensible defaults, and you have to set only the configuration. Copy `config.toml.sample`
 to `config.toml` and set the values. The `project` key corresponds to the Jira Project.
 
 The three functionalities are provided as three script entry points:
