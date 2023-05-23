@@ -51,7 +51,7 @@ def populatedb(jira: Jira, project: str) -> None:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Create Jira tickets.")
+    parser = argparse.ArgumentParser(description="Populate database with Jira tickets.")
     parser.add_argument(
         "--config",
         default="config.toml",

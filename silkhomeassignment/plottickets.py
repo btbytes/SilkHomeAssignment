@@ -43,7 +43,7 @@ def plot_tickets(dbfile: str, pngfile: str) -> None:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Create Jira tickets.")
+    parser = argparse.ArgumentParser(description="Plot ticket creation timeline.")
     parser.add_argument(
         "--input",
         default="issues.json",
