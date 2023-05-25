@@ -27,9 +27,13 @@ RUN_TIME = 60 * 60  # 1 hour
 def generate_tickets(jira: Jira, project: str) -> None:
     logging.info(f"Run start time: {time.ctime()}")
     start_time = time.time()
-    end_time = start_time + RUN_TIME
-
-    for count in range(TICKET_COUNT):
+    random_times = [random.uniform(0, RUN_TIME) for i in range(TICKET_COUNT)]
+    random_times.sort()
+    first_sleep_time = random_times[0]
+    time.sleep(first_sleep_time)
+    count = 1
+    for i in range(1, len(random_times)):
+        ta = time.time()
         issuetype = random.choice(issuetypes)
         priority = random.choice(priorities)
 
@@ -46,10 +50,10 @@ def generate_tickets(jira: Jira, project: str) -> None:
         except Exception as e:
             logging.error(f"Failed to create issue {count}: {e}")
         # set up the next sleep time
-        remaining_time = end_time - time.time()
-        if remaining_time > 0:
-            sleep_time = random.uniform(0, remaining_time / (TICKET_COUNT - count))
-            time.sleep(sleep_time)
+        tb = time.time()
+        # we will take into account the time taken to run each ticket creation
+        time.sleep(random_times[i] - (first_sleep_time + (tb - ta)))
+        first_sleep_time = random_times[i]
     logging.info(f"Run end time: {time.ctime()}")
 
 
